@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+.required
+{
+    color:red;
+}
+.Re
+{
+    line-height:20%;
+}
+input[type=text], input[type=email], input[type=password], select, tel
+{
+    width: 100%;
+    padding: 15px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid #F9F8F8;
+    border-right: 2px solid #F9F8F8;
+    border-top: 2px solid #F9F8F8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color:white;
+
+}
+
+input[type=number]{
+    width: 50%;
+    padding: 15px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid #F9F8F8;
+    border-right: 2px solid #F9F8F8;
+    border-top: 2px solid #F9F8F8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    background-color:white;
+}
+textarea
+{
+    
+    border-bottom: 2px solid black;
+    border-left: 2px solid #F9F8F8;
+    border-right: 2px solid #F9F8F8;
+    border-top: 2px solid #F9F8F8;
+    background-color:white;
+    border-radius: 4px;
+    overflow: auto;
+	height:25%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit]
+{
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        border-radius: 14px;
+}
+
+
+input[type=submit]:hover
+{
+    background-color: #960018;
+}
+
+.container
+{
+    background-color: white;
+    padding: 20px;
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
+

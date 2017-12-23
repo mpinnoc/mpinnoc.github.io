@@ -1,0 +1,139 @@
+//NOT USED
+
+
+<?php
+$db_host = 'localhost'; // Server Name
+$db_user = 'root'; // Username
+$db_pass = 'root'; // Password
+$db_name = 'Test'; // Database Name
+
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+if (!$conn) {
+	die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
+}
+
+$sql = 'SELECT * 
+		FROM Books';
+		
+$query = mysqli_query($conn, $sql);
+
+if (!$query) {
+	die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:300" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                    <link href="main.css" rel="stylesheet" type="text/css" />
+        <title>
+            Textbooks
+        </title>
+        	 <style>
+        		.display {
+        			position:relative; 
+        			text-align:left; 
+        			height: 400px; 
+        			width:450px; 
+        			font-size: 18px;
+        			font-family: 'Oswald', sans-serif;
+        			margin: auto; 
+        		}
+        		section { 
+        			border:1px solid #cccccc; 
+        			padding:5px; 
+        			overflow:hidden; 
+        			margin: 0; /*Can go*/
+        			/*box-shadow: 0 0 0 1px #000;*/
+
+        			
+        		}
+    			section > section { 
+    				float:left; 
+    			}
+    			.indent-1 { 
+    				padding-left:100px;
+    				border:none;
+    			}
+        	</style>
+            </head>
+    <body>
+        <div>
+            <table id="myTable">
+                <tr>
+                    <td>
+                        <form action= "Search.php" method="POST">
+                        <input style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
+                		<button name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
+		               	</form>
+		               	<button onClick="window.location.href='cart.php'" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">&#xE8CC;</i></button>
+
+                        <div style="float:right;" class="dropdown">
+            
+                		<button  onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
+                			<ul class="dmenu">
+                            <?php
+                                session_start();
+                                if($_SESSION['ID']==NULL){
+                                    echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
+                                }
+                                else{
+                                    echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
+                            }?> 
+                            </ul>
+            			</div>
+                        
+                        <img class="img2" src="logo3.png"/>
+                        <h6></h6>
+                        <table id="bot">
+                            <tr>
+                                <input onClick="window.location.href='Home.php'" type="button" class="button" value="Home">
+                                <input onClick="window.location.href='Mission.php'" type="button" class="button" value="Mission">
+                                <input onClick="window.location.href='Contact.php'" type="button" class="button" value="Contact">
+                            	<input onClick="window.location.href='Buy.html'" type="button" class="button" value="Buy">
+                                <input onClick="window.location.href='Sell.php'" type="button" class="button" value="Sell">                                        
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+               <body  style="font-family:'Oswald';">
+    	<h6></h6>
+		<center style="line-height:20px;">Textbooks</center>
+		<h6></h6>                    
+			<img style="opacity:0.6" src="Textbooks.png"/>		
+		<h2></h2>
+	
+		<section class="indent-1">		
+			<?php
+				while ($row = mysqli_fetch_array($query))
+				{								
+					echo '<section><tr>
+							<td style="">Subject:<td>
+								<tr>'.$row['subject'].'</tr><br>
+							<td>Course:<td>									
+								<tr>'.$row['course'].'</tr><br>
+							<td>Title:<td>									
+								<tr>'.$row['title'].'</tr><br>
+							<td>Condition:<td>
+								<tr>'.$row['conditions'].'</tr><br>
+							<td><td><br>
+								<tr><img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" /></tr><br>
+						</tr><tr><form><input type="button" class="button" value="View Product"></form></tr>
+</section>';
+				}?>
+		</section>	
+			</body>		
+        
+        </div>
+        
+    </body>
+    
+</html>
+
+<footer style="font-family:Oswald">
+    <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
+</footer>

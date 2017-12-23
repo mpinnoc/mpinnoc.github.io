@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:300" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link href="main.css" rel="stylesheet" type="text/css" />
+                <link href="contact.css" rel="stylesheet" type="text/css" />
+                <title>
+                    Login
+                </title>
+                
+                </head>
+    <body>
+        <div>
+            <table id="myTable">
+                <tr>
+                    <td>
+                        <div style="float:left;" class="dropdown2">
+                        <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
+                        <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
+                            <form action= "Search.php" method="POST">
+                                <li><input style="border-color:#CCCCCC" name="search" class="search" type="class" placeholder="Search..."/>
+                                    <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
+                                </li>
+                            </form>
+                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact.php'">Buy</a></li>
+                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
+                            <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
+
+                                </ul>
+                        </div>
+                        
+                        <form action= "Search.php" method="POST">
+                        <input style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
+                		<button name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
+		               	</form>
+		               	<button onClick="window.location.href='cart.php'" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">&#xE8CC;</i></button>
+
+                        <div style="float:right;" class="dropdown">
+            
+                		<button onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
+                
+                			<ul class="dmenu">
+                
+                   				<li><a onClick="window.location.href='Registration.php'" href="#">Create Account </a></li>
+                    			<li><a onClick="window.location.href='Login.php'" href="#">Login </a></li>
+                                <li><a onclick="window.location.href='logout.php'" href="#">Logout</a></li>                    
+                			</ul>
+            			</div>
+                        
+                        <img class="img2" src="logo3.png"/>
+                        <h6></h6>
+                        <table id="bot">
+                            <tr>
+                                <input onClick="window.location.href='Home.php'" type="button" class="button" value="Home">
+                                <input onClick="window.location.href='Mission.php'" type="button" class="button" value="Mission">
+                                <input onClick="window.location.href='Contact.php'" type="button" class="button" value="Contact">
+                            	<input onClick="window.location.href='Buy.php'" type="button" class="button" value="Buy">
+                                <input onClick="window.location.href='Sell.php'" type="button" class="button" value="Sell">                                  
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <body style="background:white">
+                
+                <div class="content" style="padding:25px; text-align:left">
+                    <form action= "login.php" method="post">
+                      
+                    <label ><h2> Login</h2></label>
+                    
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required="required" value=""/>
+                    
+                    <h6></h6>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required="required" value=""/>
+                    
+                    <center style="line-height:10px;"> <input type="submit" class="button" name="submit" value="Login">
+                        </center>
+                    </form>
+                    
+                </div>
+            </body>
+        </div>
+    </body>
+</html>
+
+<footer style="font-family:Oswald">
+    <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
+</footer>
+
+
