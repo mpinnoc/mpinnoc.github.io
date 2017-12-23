@@ -77,10 +77,11 @@ session_start();
                                     <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
                                 </li>
                             </form>
-                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
-                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
-                            <li><a onClick="window.location.href='Contact.php'">Contact</a></li>
-                            <li><a onClick="window.location.href='Buy.php'">Buy</a></li>                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
+                            <li><a onClick="window.location.href='Home.html'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission.html'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact.html'">Contact</a></li>
+                            <li><a onClick="window.location.href='Buy.html'">Buy</a></li>                            
+                            <li><a onClick="window.location.href='Sell.html'">Sell</a></li>
                             <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
 
                                 </ul>
@@ -111,11 +112,11 @@ session_start();
                         <h6></h6>
                         <table id="bot">
                             <ul class="dmenu">
-                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
-                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
-                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
-                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
-                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
+                            <a onClick="window.location.href='Home.html'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission.html'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact.html'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy.html'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell.html'" class="button">Sell</a>
                                 </ul>
                         </table>
                     </td>
