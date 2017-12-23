@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-    
     <head>
         <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:300" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:700" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-                    <link href="main.css" rel="stylesheet" type="text/css" />
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link href="main.css" rel="stylesheet" type="text/css" />
+                
                 <title>
-                    RU CONNECTED?
+                    Thank You!
                 </title>
+                
+                <link href="contact.css" rel="stylesheet" type="text/css" />
+                <link href="main.css" rel="stylesheet" type="text/css" />
                 </head>
     <body>
+        <div>
             <table id="myTable">
                 <tr>
                     <td>
-                    	<div style="float:left;" class="dropdown2">
+                        <div style="float:left;" class="dropdown2">
                         <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
                         <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
                             <form action= "Search.php" method="POST">
@@ -22,11 +25,10 @@
                                     <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
                                 </li>
                             </form>
-                            <li><a onClick="window.location.href='Home.html'">Home</a></li>
-                            <li><a onClick="window.location.href='Mission.html'">Mission</a></li>
-                            <li><a onClick="window.location.href='Contact.html'">Contact</a></li>
-                            <li><a onClick="window.location.href='Buy.html'">Buy</a></li>                            
-                            <li><a onClick="window.location.href='Sell.html'">Sell</a></li>
+                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact.php'">Contact</a></li>
+                            <li><a onClick="window.location.href='Buy.php'">Buy</a></li>                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
                             <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
 
                                 </ul>
@@ -50,25 +52,37 @@
                                 else{
                                     echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
                                     echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
-                            }?>  
+                            }?> 
                             </ul>
             			</div>
-                             
+                        
+                        <img class="img2" src="logo3.png"/>
+                        <h6></h6>
                         <table id="bot">
                             <ul class="dmenu">
-                            <a onClick="window.location.href='Home.html'" class="button">Home</a>
-                            <a onClick="window.location.href='Mission.html'" class="button">Mission</a>
-                            <a onClick="window.location.href='Contact.html'" class="button">Contact</a>
-                            <a onClick="window.location.href='Buy.html'" class="button">Buy</a>
-                            <a onClick="window.location.href='Sell.html'" class="button">Sell</a>
+                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
                                 </ul>
-                        </table> 
+                        </table>
                     </td>
                 </tr>
             </table>
-            <img class= "effect" src="Rutgers.png" alt="Rutgers" style="width:100%;height:610px" />
-    </body>
+            <body>
+                
+                <div class="content">
+                    <h6></h6>
+                    <h2 style="color:green; text-align:center"> ✔ Your account has been successfully created!</h2>
+
+                    <h style="justify:left;font-size:20px">Thank You for Signing Up With Us at RU Connected!</h>
+                </div>
+            </body>
 </html>
 
+<footer style="font-family:Oswald">
+    <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
+</footer>
 
 

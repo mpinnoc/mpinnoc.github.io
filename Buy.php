@@ -1,7 +1,5 @@
-//NOT USED
-
-
 <?php
+session_start();
 $db_host = 'localhost'; // Server Name
 $db_user = 'root'; // Username
 $db_pass = 'root'; // Password
@@ -13,7 +11,7 @@ if (!$conn) {
 }
 
 $sql = 'SELECT * 
-		FROM Books';
+		FROM Books WHERE quantity=1';
 		
 $query = mysqli_query($conn, $sql);
 
@@ -51,7 +49,9 @@ if (!$query) {
         			
         		}
     			section > section { 
-    				float:left; 
+    				float:left;
+                    width:350px;
+                    height: 450px;
     			}
     			.indent-1 { 
     				padding-left:100px;
@@ -64,18 +64,34 @@ if (!$query) {
             <table id="myTable">
                 <tr>
                     <td>
+                        <div style="float:left;" class="dropdown2">
+                        <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
+                        <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
+                            <form action= "Search.php" method="POST">
+                                <li><input style="border-color:#CCCCCC" name="search" class="search" type="class" placeholder="Search..."/>
+                                    <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
+                                </li>
+                            </form>
+                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact.php'">Contact</a></li>
+                            <li><a onClick="window.location.href='Buy.php'">Buy</a></li>                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
+                            <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
+
+                                </ul>
+                        </div>
+                        
                         <form action= "Search.php" method="POST">
-                        <input style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
-                		<button name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
+                        <input id="view" style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
+                		<button id="view" name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
 		               	</form>
-		               	<button onClick="window.location.href='cart.php'" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">&#xE8CC;</i></button>
+		               	<button id="view" onClick="window.location.href='cart.php'" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">&#xE8CC;</i></button>
 
                         <div style="float:right;" class="dropdown">
             
                 		<button  onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
-                			<ul class="dmenu">
-                            <?php
-                                session_start();
+                            <ul class="dmenu">               
+                   	        <?php
                                 if($_SESSION['ID']==NULL){
                                     echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
                                 }
@@ -89,13 +105,13 @@ if (!$query) {
                         <img class="img2" src="logo3.png"/>
                         <h6></h6>
                         <table id="bot">
-                            <tr>
-                                <input onClick="window.location.href='Home.php'" type="button" class="button" value="Home">
-                                <input onClick="window.location.href='Mission.php'" type="button" class="button" value="Mission">
-                                <input onClick="window.location.href='Contact.php'" type="button" class="button" value="Contact">
-                            	<input onClick="window.location.href='Buy.html'" type="button" class="button" value="Buy">
-                                <input onClick="window.location.href='Sell.php'" type="button" class="button" value="Sell">                                        
-                            </tr>
+                            <ul class="dmenu">
+                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
+                                </ul>
                         </table>
                     </td>
                 </tr>
@@ -104,7 +120,7 @@ if (!$query) {
     	<h6></h6>
 		<center style="line-height:20px;">Textbooks</center>
 		<h6></h6>                    
-			<img style="opacity:0.6" src="Textbooks.png"/>		
+			<img class="buy"  src="Textbooks.jpg" width=900 height=300/>		
 		<h2></h2>
 	
 		<section class="indent-1">		
@@ -122,18 +138,15 @@ if (!$query) {
 								<tr>'.$row['conditions'].'</tr><br>
 							<td><td><br>
 								<tr><img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" /></tr><br>
-						</tr><tr><form><input type="button" class="button" value="View Product"></form></tr>
-</section>';
+							<tr><a class="button" href="viewproduct.php?ID='.$row['id'].'">View Product</a></tr><br>						
+						<br></tr></section>';
 				}?>
-		</section>	
+		</section>
+			<footer style="font-family:Oswald; position:static; bottom:zero">
+   				<small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
+			</footer>		
 			</body>		
-        
         </div>
-        
     </body>
-    
 </html>
 
-<footer style="font-family:Oswald">
-    <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
-</footer>

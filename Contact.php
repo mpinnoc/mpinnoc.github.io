@@ -1,92 +1,17 @@
-<?php
-session_start();
-if(isset($_GET['ID'])){
-$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "root";
-$dbname = "Test";
-
-// Create connection
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-$subject = $_POST['subject'];
-$course = $_POST['course'];
-$title = $_POST['title'];
-$price = $_POST['price'];
-$condition = $_POST['condition'];
-$description = $_POST['description'];
- 	$ID = $_GET['ID'];
-
-$file = addslashes(file_get_contents($_FILES["fileToUpload"]["tmp_name"]));  
-
-$sql = "UPDATE Books SET id= '$ID', subject='$subject', course='$course', title='$title', price='$price', conditions='$condition', description='$description', name='$file' WHERE id='$ID'"; 
-
-mysqli_query($conn, $sql);
-
-//$id = mysqli_insert_id($conn);
-
-//$conn->close();
-}
-
-?>
-
-<?php
-/*$servername = "localhost";
-$dbusername = "root";
-$dbpassword = "root";
-$dbname = "Test";
-
-// Create connection
-$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-$subject = $_POST['subject'];
-$course = $_POST['course'];
-$title = $_POST['title'];
-$price = $_POST['price'];
-$condition = $_POST['condition'];
-$description = $_POST['description'];*/
-
-$sql = "SELECT * 
-		FROM Books WHERE id='$ID'"; 
-		
-$query = mysqli_query($conn, $sql);
-
-
-?>
-
+<!DOCTYPE html>
 <html>
- <head>
-        <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:300" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-                    <link href="main.css" rel="stylesheet" type="text/css" />
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Oswald:300" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link href="main.css" rel="stylesheet" type="text/css" />
                     <link href="contact.css" rel="stylesheet" type="text/css" />
-
-        <title>
-            Listing 
-        </title>
-        <style>
-        	.display
-        	{
-        	position:relative; 
-        	text-align:left; 
-        	height: 400px; 
-        	width:450px; 
-        	font-size: 18px;
-        	font-family: 'Oswald', sans-serif;
-        	margin: auto;
-        	}
-        </style>
-</head>
-<body>
-
- <div>
+            <title>
+                Contact Us
+            </title>
+            
+            </head>
+    <body>
+        <div>
             <table id="myTable">
                 <tr>
                     <td>
@@ -119,6 +44,7 @@ $query = mysqli_query($conn, $sql);
                 		<button onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
                             <ul class="dmenu">               
                    	        <?php
+                                session_start();
                                 if($_SESSION['ID']==NULL){
                                     echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
                                 }
@@ -143,35 +69,39 @@ $query = mysqli_query($conn, $sql);
                     </td>
                 </tr>
             </table>
-            	<h1 style="text-align:center; font-size:30px;font-family: 'Oswald', sans-serif;"> 
-            	Please Confirm that the Information Below is Correct </h1>
-                    <div class="display">
-					 <label ><h2> Product Listing</h2></label>
-						<?php
-							while ($row = mysqli_fetch_array($query))
-							{								
-								echo '<tr>
-								<td style="">Subject:<td>
-									<tr>'.$row['subject'].'</tr><br>
-								<td>Course:<td>									
-									<tr>'.$row['course'].'</tr><br>
-								<td>Title:<td>									
-									<tr>'.$row['title'].'</tr><br>
-                                <td>Price:<td>									
-									<tr>$'.$row['price'].'</tr><br>
-								<td>Condition:<td>
-									<tr>'.$row['conditions'].'</tr><br>
-                                <td>Description:<td>
-									<tr>'.$row['description'].'</tr><br>
-								<td>Image:<td><br>
-									<center><tr><img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" /></center>  
-                                </tr>
-                            		<div style="text-align:center"><tr><a class="button" style=" text-align:center" href="edit.php?ID='.$row['id'].'">Edit</a></tr>
-									</tr>';
-							}?> 
-					<input style= "display:inline-block; text-align:center" onClick="window.location.href='Confirmation2.php'" type="button" class="button" value="Continue">
-					</div>
-				</div>
-    </div>
-</body>
+            <body style="background:white;height:100%">
+
+        <div class="container" style="padding:25px">
+            	<form action= "contactform.php" method="POST">
+               
+                <label style="padding-top:40px"><h2> Contact Form</h2></label>
+
+                <label for="name"> Your Full Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required="required"/>
+                
+                <label for="cell">Cell Number:</label><br />
+                <input type="text" id="cell" name="cell" placeholder="1(800)-222-3333">
+                        
+                <label for="email">Email Address: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="JohnSmith@example.com" required="required"/>
+      
+                <label for="message">Message: <span class="required">*</span>
+                <textarea id="message" name="message" placeholder="Enter your message or query..." required="required"></textarea></label>
+
+                
+                <body style="line-height:normal;" id="required"><span class="required">*</span> These fields are required</body>
+                <center style="line-height:10px;"> <input type="submit" class="button" name="submit" value="Submit Form">
+                </center>
+            </form>
+            <div>
+                <iframe style="padding:15px;right:5px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377.12902117695194!2d-74.17601849489604!3d40.7371830319799!2m3!1f0!2f39.37469812961927!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x89c2537e41ee6b09%3A0x47c5c35500021b0d!2sRutgers+University+-+Newark+Campus!5e1!3m2!1sen!2sus!4v1508516839228" width="650" height="658" frameborder="0"allowfullscreen></iframe>
+            </div>
+        </div>
+    </body>
+</div>
+    </body>
 </html>
+
+<footer style="font-family:Oswald; position:static; bottom:0; text-align:center">
+    <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
+</footer>
