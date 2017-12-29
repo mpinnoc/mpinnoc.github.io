@@ -1,0 +1,33 @@
+ErrorDocument 404 https://mpinnoc.github.io/PageNotFound.html
+
+#AddType application/x-httpd-php .htm .html
+
+Options +FollowSymLinks
+
+RewriteEngine On
+
+RewriteRule ^/?Account/?$ Account.php [L]
+RewriteRule ^/?Buy/?$ Buy.php [L]
+RewriteRule ^/?Cart/?$ Cart.php [L]
+RewriteRule ^/?Confirmation/?$ Confirmation.php [L]
+RewriteRule ^/?Confirmation2/?$ Confirmation2.php [L]
+RewriteRule ^/?Contact/?$ Contact.php [L]
+RewriteRule ^/?Edit/?$ Edit.php [L]
+RewriteRule ^/?Home/?$ Home.php [L]
+RewriteRule ^/?index/?$ index.html [L]
+RewriteRule ^/?Listing/?$ Listing.php [L]
+RewriteRule ^/?Listings/?$ Listings.php [L]
+RewriteRule ^/?Login/?$ Login.php [L]
+RewriteRule ^/?Mission/?$ Mission.php [L]
+RewriteRule ^/?MyAccount/?$ MyAccount.php [L]
+RewriteRule ^/?MyListings/?$ MyListings.php [L]
+RewriteRule ^/?MyOrders/?$ MyOrders.php [L]
+RewriteRule ^/?MyAccount/?$ MyAccount.php [L]
+RewriteRule ^/?Order/?$ Order.php [L]
+#RewriteRule ^/?product/?$ product.php [L]
+RewriteRule ^/?Registration/?$ Registration.php [L]
+RewriteRule ^/?Search/?$ Search.php [L]
+RewriteRule ^/?Sell/?$ Sell.php [L]
+RewriteRule ^/?Thanx/?$ Thanx.php [L]
+RewriteRule ^/?Update/?$ Update.php [L]
+RewriteRule ^/?viewproduct/?$ viewproduct.php [L]
