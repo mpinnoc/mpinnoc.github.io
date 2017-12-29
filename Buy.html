@@ -64,7 +64,7 @@ if (!$query) {
             <table id="myTable">
                 <tr>
                     <td>
-                        <form action= "Search.php" method="POST">
+                        <form action= "Search" method="POST">
                         <input style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
                 		<button name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
 		               	</form>
@@ -72,15 +72,15 @@ if (!$query) {
 
                         <div style="float:right;" class="dropdown">
             
-                		<button  onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
+                		<button  onClick="window.location.href='Account'"><i class="material-icons">person</i>Account &#x2630;</button>
                 			<ul class="dmenu">
                             <?php
                                 session_start();
                                 if($_SESSION['ID']==NULL){
-                                    echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'Registration\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login\'" href="#">Login</a></li>';
                                 }
                                 else{
-                                    echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'MyListings\'" href="#">My Listings</a></li>';
                                     echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
                             }?> 
                             </ul>
@@ -90,11 +90,11 @@ if (!$query) {
                         <h6></h6>
                         <table id="bot">
                             <tr>
-                                <input onClick="window.location.href='Home.php'" type="button" class="button" value="Home">
-                                <input onClick="window.location.href='Mission.php'" type="button" class="button" value="Mission">
-                                <input onClick="window.location.href='Contact.php'" type="button" class="button" value="Contact">
+                                <input onClick="window.location.href='Home'" type="button" class="button" value="Home">
+                                <input onClick="window.location.href='Mission'" type="button" class="button" value="Mission">
+                                <input onClick="window.location.href='Contact'" type="button" class="button" value="Contact">
                             	<input onClick="window.location.href='Buy.html'" type="button" class="button" value="Buy">
-                                <input onClick="window.location.href='Sell.php'" type="button" class="button" value="Sell">                                        
+                                <input onClick="window.location.href='Sell'" type="button" class="button" value="Sell">                                        
                             </tr>
                         </table>
                     </td>

@@ -17,22 +17,22 @@
                        <div style="float:left;" class="dropdown2">
                         <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
                         <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
-                            <form action= "Search.php" method="POST">
+                            <form action= "Search" method="POST">
                                 <li><input style="border-color:#CCCCCC" name="search" class="search" type="class" placeholder="Search..."/>
                                     <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
                                 </li>
                             </form>
-                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
-                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
-                            <li><a onClick="window.location.href='Contact.php'">Buy</a></li>
-                            <li><a onClick="window.location.href='Contact.php'">Contact</a></li>
-                            <li><a onClick="window.location.href='Buy.php'">Buy</a></li>                            
-                            <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
+                            <li><a onClick="window.location.href='Home'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact'">Buy</a></li>
+                            <li><a onClick="window.location.href='Contact'">Contact</a></li>
+                            <li><a onClick="window.location.href='Buy'">Buy</a></li>                            
+                            <li><a onClick="window.location.href='Cart'">Cart</a></li>
 
                                 </ul>
                         </div>
                         
-                        <form action= "Search.php" method="POST">
+                        <form action= "Search" method="POST">
                         <input id="view" style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
                 		<button id="view" name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
 		               	</form>
@@ -40,15 +40,15 @@
 
                         <div style="float:right;" class="dropdown">
             
-                		<button onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
+                		<button onClick="window.location.href='Account'"><i class="material-icons">person</i>Account &#x2630;</button>
                             <ul class="dmenu">               
                    	        <?php
                             session_start();
                                 if($_SESSION['ID']==NULL){
-                                    echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'Registration\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login\'" href="#">Login</a></li>';
                                 }
                                 else{
-                                    echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'MyListings\'" href="#">My Listings</a></li>';
                                     echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
                             }?> 
                             </ul>
@@ -58,11 +58,11 @@
                         <h6></h6>
                         <table id="bot">
                             <ul class="dmenu">
-                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
-                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
-                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
-                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
-                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
+                            <a onClick="window.location.href='Home'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell'" class="button">Sell</a>
                                 </ul>
                         </table>
                     </td>
@@ -77,7 +77,7 @@
             
             	<form>
             	<br><br><br><br><br><br>
-                	<input onClick="window.location.href='Listing.php'" type="button" class="button" value="Create a Product Listing">
+                	<input onClick="window.location.href='Listing'" type="button" class="button" value="Create a Product Listing">
                 </form>
                 </p>                
                 <img style="opacity:0.6; position: absolute;left: 0px;top: 50px; z-index:-1;width:100%;min-height:100%" src="books.jpg"/>

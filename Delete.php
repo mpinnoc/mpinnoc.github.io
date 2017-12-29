@@ -19,7 +19,7 @@ if(isset($_GET['ID']))
 	if ($conn->connect_error) {
     	die("Connection failed: " . $conn->connect_error);
 	} 
-    header('Location:  MyListings.php');
+    header('Location:  MyListings');
 }
    
 

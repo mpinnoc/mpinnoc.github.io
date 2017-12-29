@@ -28,26 +28,24 @@
         <style> 
             #left{
                 float:left;
-                width:26%;
+                width:33%;
                 height: 100%;
             }
             #right{
                 float:right;
                 text-align:left;
-                width:74%;
+                width:67%;
                 overflow:hidden;
-                background-color:white;
-                /*border-left:2px solid black;*/
             }
             section { 
                 padding:5px; 
                 overflow:hidden; 
                 margin: 0; 
                 font-size:16px;
-                text-align: left; 
+                text-align: left;                    
             }
             section > section { 
-                float:left;
+                float:left;                     
                 height: 280px;
                 width: 250px;
             }
@@ -60,7 +58,7 @@
             }
        </style>
             </head>
-    <body >
+    <body>
         <div>
             <table id="myTable">
                 <tr>
@@ -68,21 +66,21 @@
                         <div style="float:left;" class="dropdown2">
                         <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
                         <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
-                            <form action= "Search.php" method="POST">
+                            <form action= "Search" method="POST">
                                 <li><input style="border-color:#CCCCCC" name="search" class="search" type="class" placeholder="Search..."/>
                                     <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
                                 </li>
                             </form>
-                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
-                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
-                            <li><a onClick="window.location.href='Contact.php'">Buy</a></li>
-                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
-                            <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
+                            <li><a onClick="window.location.href='Home'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact'">Buy</a></li>
+                            <li><a onClick="window.location.href='Sell'">Sell</a></li>
+                            <li><a onClick="window.location.href='Cart'">Cart</a></li>
 
                                 </ul>
                         </div>
                         
-                        <form action= "Search.php" method="POST">
+                        <form action= "Search" method="POST">
                         <input id="view" style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
                 		<button id="view" name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
 		               	</form>
@@ -90,14 +88,14 @@
 
                         <div style="float:right;" class="dropdown">
             
-                		<button onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
+                		<button onClick="window.location.href='Account'"><i class="material-icons">person</i>Account &#x2630;</button>
                             <ul class="dmenu">               
                    	        <?php
                                 if($_SESSION['ID']==NULL){
-                                    echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php" href="#">Login</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'Registration\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login" href="#">Login</a></li>';
                                 }
                                 else{
-                                    echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'MyListings\'" href="#">My Listings</a></li>';
                                     echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
                             }?> 
                             </ul>
@@ -107,18 +105,18 @@
                         <h6></h6>
                         <table id="bot">
                             <ul class="dmenu">
-                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
-                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
-                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
-                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
-                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
+                            <a onClick="window.location.href='Home'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell'" class="button">Sell</a>
                                 </ul>
                         </table>
                     </td>
                 </tr>
             </table>
                     <body  style="font-family:'Oswald';">
-                    <div> 
+                    <div class="container; background-color;#f1f1f1" > 
 					   <div id="left" style="">
                             <ul class= "info">
                 	<li>
@@ -144,9 +142,9 @@
                     <a>Rutgers Newark</a>
                     <br><a>Status: Other</a><br>
 
-                	<li><?php echo '<a href="MyAccount.php" style="color:grey">Personal Data</a>'; ?></li>
-                    <li><a href="MyListings.php" style="color:grey">Listings</a></li>
-                    <li><a href="MyOrders.php" style="color:grey">Orders</a></li>
+                	<li><?php echo '<a href="MyAccount" style="color:grey">Personal Data</a>'; ?></li>
+                    <li><a href="MyListings" style="color:grey">Listings</a></li>
+                    <li><a href="MyOrders" style="color:grey">Orders</a></li>
                     <li><a href="logout.php" style="color:grey">Logout</a></li>
                     <li></li>
                     
@@ -154,7 +152,7 @@
                             </div>
     				    </div>
                         <div id="right">
-                            <div style="padding-left:70px">
+                            
                         <?php
                             session_start();
                             $servername = "localhost";
@@ -183,8 +181,9 @@
 
                             $sql= "SELECT * FROM Books WHERE sessionid='$ID'";
                             $query = mysqli_query($conn, $sql);
-                           
+                            $row  = mysqli_fetch_array($query);?>
 
+                            <?php
                                 if($query->num_rows==0)
                                     echo '<h1 style="text-align:center;color:grey">You have no lsitings posted at the moment.<br> To create a listing, simply click on the Sell button above.</h1>';
                                 else{
@@ -214,7 +213,7 @@
                                         }
                                 }
                             ?>
-                            </div>
+            
 <footer style="font-family:Oswald;text-align:center">
     <small>&copy; 2018 RU CONNECTED? | Designed by Michelle Pinnock</small>
 </footer>	
