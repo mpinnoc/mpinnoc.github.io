@@ -24,7 +24,7 @@
 
 	if ($conn->query($sql) === TRUE) {
     	//echo "New record created successfully";
-    	header("Location: Thanx"); /* Redirect browser */
+    	header("Location: Thanx.php"); /* Redirect browser */
 
 	} else {
    	 	echo "Error: " . $sql . "<br>" . $conn->error;

@@ -28,7 +28,7 @@ session_start();
 		 $_SESSION["success"] = True;
 		 
 		 }
-		 header("Location: Confirmation"); /* Redirect browser */
+		 header("Location: Confirmation.php"); /* Redirect browser */
 		 exit();
     }
 	

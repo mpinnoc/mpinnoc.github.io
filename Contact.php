@@ -18,22 +18,22 @@
                         <div style="float:left;" class="dropdown2">
                         <button class="button" style="padding: 8px 4px;font-size:18px">&#x2630;</button>
                         <ul class="dmenu" style="width:225px;background-color:#CCCCCC;">
-                            <form action= "Search" method="POST">
+                            <form action= "Search.php" method="POST">
                                 <li><input style="border-color:#CCCCCC" name="search" class="search" type="class" placeholder="Search..."/>
                                     <input class="material-icons" style="background-color:#CCCCCC;float:right;padding: 10px 4px" type="submit" value="search"/>
                                 </li>
                             </form>
-                            <li><a onClick="window.location.href='Home'">Home</a></li>
-                            <li><a onClick="window.location.href='Mission'">Mission</a></li>
-                            <li><a onClick="window.location.href='Contact'">Contact</a></li>
-                            <li><a onClick="window.location.href='Buy'">Buy</a></li>                            
-                            <li><a onClick="window.location.href='Sell'">Sell</a></li>
-                            <li><a onClick="window.location.href='Cart'">Cart</a></li>
+                            <li><a onClick="window.location.href='Home.php'">Home</a></li>
+                            <li><a onClick="window.location.href='Mission.php'">Mission</a></li>
+                            <li><a onClick="window.location.href='Contact.php'">Contact</a></li>
+                            <li><a onClick="window.location.href='Buy.php'">Buy</a></li>                            
+                            <li><a onClick="window.location.href='Sell.php'">Sell</a></li>
+                            <li><a onClick="window.location.href='Cart.php'">Cart</a></li>
 
                                 </ul>
                         </div>
                         
-                        <form action= "Search" method="POST">
+                        <form action= "Search.php" method="POST">
                         <input id="view" style="float:left;" name="search" class="search" type="class" placeholder="Search..."/>
                 		<button id="view" name="submit" type="submit" class="button" style="float:left;padding: 8px 4px"><i class="material-icons">search</i></button>
 		               	</form>
@@ -41,15 +41,15 @@
 
                         <div style="float:right;" class="dropdown">
             
-                		<button onClick="window.location.href='Account'"><i class="material-icons">person</i>Account &#x2630;</button>
+                		<button onClick="window.location.href='Account.php'"><i class="material-icons">person</i>Account &#x2630;</button>
                             <ul class="dmenu">               
                    	        <?php
                                 session_start();
                                 if($_SESSION['ID']==NULL){
-                                    echo '<li><a onClick="window.location.href=\'Registration\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login\'" href="#">Login</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'Registration.php\'" href="#">Create Account</a></li>';               echo '<li><a onClick="window.location.href=\'Login.php\'" href="#">Login</a></li>';
                                 }
                                 else{
-                                    echo '<li><a onClick="window.location.href=\'MyListings\'" href="#">My Listings</a></li>';
+                                    echo '<li><a onClick="window.location.href=\'MyListings.php\'" href="#">My Listings</a></li>';
                                     echo '<li><a onClick="window.location.href=\'Logout.php\'" href="#">Logout</a></li>';
                             }?> 
                             </ul>
@@ -59,13 +59,11 @@
                         <h6></h6>
                         <table id="bot">
                             <ul class="dmenu">
-                                <a onClick="window.location.href='Home.html'">Home</a>
-                                <a onClick="window.location.href='Mission.html'">Mission</a>
-                                <a onClick="window.location.href='Contact.html'">Contact</a>
-                                <a onClick="window.location.href='Buy.html'">Buy</a>                          
-                                <a onClick="window.location.href='Sell.html'">Sell</a>
-                                <a onClick="window.location.href='Cart'">Cart</a>
-
+                            <a onClick="window.location.href='Home.php'" class="button">Home</a>
+                            <a onClick="window.location.href='Mission.php'" class="button">Mission</a>
+                            <a onClick="window.location.href='Contact.php'" class="button">Contact</a>
+                            <a onClick="window.location.href='Buy.php'" class="button">Buy</a>
+                            <a onClick="window.location.href='Sell.php'" class="button">Sell</a>
                                 </ul>
                         </table>
                     </td>
@@ -94,31 +92,9 @@
                 <body style="line-height:normal;" id="required"><span class="required">*</span> These fields are required</body>
                 <center style="line-height:10px;"> <input type="submit" class="button" name="submit" value="Submit Form">
                 </center>
-                     <?php
-      $servername = "localhost";
-        $dbusername = "root";
-        $dbpassword = "root";
-        $dbname = "Test";
-
-        $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-        
-        $name= $_POST['name'];
-        $cell=$_POST['cell'];
-        $email=$_POST['email'];
-        $messgae = $_POST['message'];
-        
-        
-        $sql = "INSERT INTO Contact (name, number, email, message)
-        VALUES ('$name', '$cell', '$email', '$message')";
-
-        mysqli_query($conn, $sql);
-                ?>
             </form>
             <div>
                 <iframe style="padding:15px;right:5px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377.12902117695194!2d-74.17601849489604!3d40.7371830319799!2m3!1f0!2f39.37469812961927!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x89c2537e41ee6b09%3A0x47c5c35500021b0d!2sRutgers+University+-+Newark+Campus!5e1!3m2!1sen!2sus!4v1508516839228" width="650" height="658" frameborder="0"allowfullscreen></iframe>
-            
-               
             </div>
         </div>
     </body>

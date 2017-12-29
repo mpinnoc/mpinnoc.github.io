@@ -26,6 +26,6 @@ mysqli_query($conn, $sql);
 
 //$conn->close();
 }
-header("Location: MyAccount");
+header("Location: MyAccount.php");
 
 ?>
